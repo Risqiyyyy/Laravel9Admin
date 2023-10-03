@@ -1,0 +1,43 @@
+{
+  "menu": [
+    {
+      "url": "/Dashboard",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard-analytics"
+    },
+    {
+      "menuHeader": "Pages"
+    },
+    {
+      "url": "/user",
+      "name": "User",
+      "icon": "menu-icon tf-icons bx bxs-user-account",
+      "slug": "user"
+    },
+    {
+      "url": "/siswa",
+      "name": "Siswa",
+      "icon": "menu-icon tf-icons bx bx-user",
+      "slug": "siswa"
+    },
+    {
+      "url": "/guru",
+      "name": "Guru",
+      "icon": "menu-icon tf-icons bx bx-user-pin",
+      "slug": "guru"
+    },
+    {
+      "url": "/jurusan",
+      "name": "Jurusan",
+      "icon": "menu-icon tf-icons bx bxs-graduation",
+      "slug": "jurusan"
+    },
+    {
+      "url": "/mapel",
+      "name": "Mapel",
+      "icon": "menu-icon tf-icons bx bxs-book",
+      "slug": "mapel"
+    }
+  ]
+}
