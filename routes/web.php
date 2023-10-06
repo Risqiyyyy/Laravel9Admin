@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\pages\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +29,14 @@ Route::get('/layouts/blank', $controller_path . '\layouts\Blank@index')->name('l
 // pages
 Route::get('/siswa', $controller_path . '\pages\SiswaController@index')->name('siswa');
 Route::get('/user', $controller_path . '\pages\UserController@index')->name('user');
+Route::controller(UserController::class)->group(function(){
+    $controller_path = 'App\Http\Controllers';
+    Route::get('/user', 'index')->name('user.index');
+    Route::post('/user', $controller_path . '\pages\UserController@store')->name('user.store');
+    // Route::get('/user/store', 'store')->name('user.store');
+});
+
+
 Route::get('/guru', $controller_path . '\pages\GuruController@index')->name('guru');
 Route::get('/jurusan', $controller_path . '\pages\JurusanController@index')->name('jurusan');
 Route::get('/mapel', $controller_path . '\pages\MapelController@index')->name('mapel');
