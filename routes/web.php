@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pages\UserController;
+use App\Http\Controllers\pages\SiswaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,15 +28,21 @@ Route::get('/layouts/container', $controller_path . '\layouts\Container@index')-
 Route::get('/layouts/blank', $controller_path . '\layouts\Blank@index')->name('layouts-blank');
 
 // pages
-Route::get('/siswa', $controller_path . '\pages\SiswaController@index')->name('siswa');
+
 Route::get('/user', $controller_path . '\pages\UserController@index')->name('user');
 Route::controller(UserController::class)->group(function(){
     $controller_path = 'App\Http\Controllers';
     Route::get('/user', 'index')->name('user.index');
     Route::post('/user', $controller_path . '\pages\UserController@store')->name('user.store');
-    // Route::get('/user/store', 'store')->name('user.store');
 });
 
+Route::controller(SiswaController::class)->group(function(){
+    $controller_path = 'App\Http\Controllers';
+    Route::get('/siswa', 'index')->name('siswa.index');
+    Route::post('/siswa', $controller_path . '\pages\SiswaController@store')->name('siswa.store');
+    Route::delete('/siswa/{NIS}', $controller_path . '\pages\SiswaController@delete')->name('siswa.delete');
+    Route::get('/siswa/{NIS}', $controller_path . '\pages\SiswaController@detail')->name('siswa.detail');
+});
 
 Route::get('/guru', $controller_path . '\pages\GuruController@index')->name('guru');
 Route::get('/jurusan', $controller_path . '\pages\JurusanController@index')->name('jurusan');

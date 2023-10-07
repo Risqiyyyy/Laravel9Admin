@@ -34,11 +34,11 @@
               <div class="row">
                 <div class="col">
                   <label class="col-form-label">Email</label>
-                  <input type="text" class="form-control" placeholder="Email" aria-label="Masukan Email" name="email">
+                  <input type="email" class="form-control" placeholder="Email" aria-label="Masukan Email" name="email" required>
                 </div>
                 <div class="col">
                   <label class="col-form-label">Password</label>
-                  <input type="text" class="form-control" placeholder="Password" aria-label="Masukan Password" name="password">
+                  <input type="password" class="form-control" placeholder="Password" aria-label="Masukan Password" name="password" required>
                 </div>
               </div>
             </div>
@@ -46,7 +46,7 @@
               <div class="row">
                 <div class="col">
                   <label class="col-form-label">Role</label>
-                  <input type="text" class="form-control" placeholder="Role" aria-label="Role" name="role">
+                  <input type="text" class="form-control" placeholder="Role" aria-label="Role" name="role" required>
                 </div>
                 <div class="col">
                   {{-- <label class="col-form-label">NIS</label>

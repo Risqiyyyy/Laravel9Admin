@@ -1,0 +1,16 @@
+POST https://api-medcom.vercel.app/register
+Content-Type: application/json
+
+{
+    "email": "risqi@gmail.com",
+    "password": "risqi312321321",
+    "confPassword": "risqi312321321",
+    "role": "siswa"
+}
+
+###
+
+DELETE https://api-medcom.vercel.app/deleteSiswa/42324
+
+###
+GET https://api-medcom.vercel.app/getSiswaById/42324

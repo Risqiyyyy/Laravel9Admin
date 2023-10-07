@@ -10,30 +10,28 @@ class UserController extends Controller
 {
   public function index()
   {
-    $response = Http::get('http://localhost:5000/users');
+    $response = Http::get('https://api-medcom.vercel.app/users');
     $users = json_decode($response); 
     return view('content.pages.user')->with('users', $users);
   }
 
-  public function create()
-  {
-      return view ('user.create');
-  }
-
   public function store(Request $request)
     {
-      $apiURL = 'http://localhost:5000/users';
-      $postInput = [
-        'email' => 'tdasdaest@gmail.com',
-        'password' => 'tesdadsatpassword',
-        'role' => 'admin'
-      ];
-    $headers = [
-        'X-header' => 'value'
-    ];
-    $response = Http::withHeaders($headers)->post($apiURL, $postInput);
-    $statusCode = $response->status();
-    $responseBody = json_decode($response->getBody(), true);
+      $response = Http::post('https://api-medcom.vercel.app/users', [
+        'email' => $request->email,
+        'password' => $request->password,
+        'role' => $request->role
+    ]);
+    return redirect()->route('user.index');
+    }
+
+    public function delete(Request $id)
+    {
+      $response = Http::post('https://api-medcom.vercel.app/users', [
+        'email' => $request->email,
+        'password' => $request->password,
+        'role' => $request->role
+    ]);
     return redirect()->route('user.index');
     }
 }
